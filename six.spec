@@ -4,7 +4,7 @@
 #
 Name     : six
 Version  : 1.10.0
-Release  : 19
+Release  : 20
 URL      : https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
