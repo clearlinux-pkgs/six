@@ -1,5 +1,5 @@
 PKG_NAME := six
-URL := https://pypi.python.org/packages/source/s/six/six-1.10.0.tar.gz
+URL := http://pypi.debian.net/six/six-1.10.0.tar.gz
 
 
 include ../common/Makefile.common
