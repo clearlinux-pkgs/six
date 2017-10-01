@@ -4,13 +4,14 @@
 #
 Name     : six
 Version  : 1.11.0
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Source0  : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
 Group    : Development/Tools
 License  : MIT
 Requires: six-legacypython
+Requires: six-python3
 Requires: six-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -36,9 +37,18 @@ legacypython components for the six package.
 Summary: python components for the six package.
 Group: Default
 Requires: six-legacypython
+Requires: six-python3
 
 %description python
 python components for the six package.
+
+
+%package python3
+Summary: python3 components for the six package.
+Group: Default
+
+%description python3
+python3 components for the six package.
 
 
 %prep
@@ -49,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505676377
+export SOURCE_DATE_EPOCH=1506872239
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -59,7 +69,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test -v
 %install
-export SOURCE_DATE_EPOCH=1505676377
+export SOURCE_DATE_EPOCH=1506872239
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -75,5 +85,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
