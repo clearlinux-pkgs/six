@@ -4,13 +4,12 @@
 #
 Name     : six
 Version  : 1.11.0
-Release  : 36
+Release  : 37
 URL      : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Source0  : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
 Group    : Development/Tools
 License  : MIT
-Requires: six-legacypython
 Requires: six-python3
 Requires: six-python
 BuildRequires : pbr
@@ -37,7 +36,6 @@ legacypython components for the six package.
 %package python
 Summary: python components for the six package.
 Group: Default
-Requires: six-legacypython
 Requires: six-python3
 
 %description python
@@ -61,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507179338
+export SOURCE_DATE_EPOCH=1519407217
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -71,7 +69,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test -v
 %install
-export SOURCE_DATE_EPOCH=1507179338
+export SOURCE_DATE_EPOCH=1519407217
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
