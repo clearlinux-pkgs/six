@@ -68,6 +68,7 @@ R-doRNG
 R-drc
 R-dtw
 R-dynlm
+R-effects
 R-emmeans
 R-fastcluster
 R-fitdistrplus
@@ -117,6 +118,7 @@ R-pkgmaker
 R-plm
 R-plotly
 R-prabclus
+R-psychotools
 R-quantreg
 R-questionr
 R-rasterVis
@@ -181,7 +183,6 @@ audit
 autofs
 awscli
 babl
-backports.functools_lru_cache
 backports.weakref
 bash_kernel
 bcrypt
@@ -397,7 +398,6 @@ libxfce4ui
 libxfce4util
 libxklavier
 libzmq
-linecache2
 linux
 linux-aws
 linux-gce

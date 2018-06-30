@@ -4,7 +4,7 @@
 #
 Name     : six
 Version  : 1.11.0
-Release  : 44
+Release  : 45
 URL      : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Source0  : http://pypi.debian.net/six/six-1.11.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
@@ -18,6 +18,7 @@ BuildRequires : pip
 BuildRequires : py
 BuildRequires : pytest
 BuildRequires : python-core
+BuildRequires : python3-core
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : setuptools-legacypython
@@ -69,12 +70,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530324178
+export SOURCE_DATE_EPOCH=1530377274
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
+%check
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+py.test -v
 %install
-export SOURCE_DATE_EPOCH=1530324178
+export SOURCE_DATE_EPOCH=1530377274
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/six
 cp LICENSE %{buildroot}/usr/share/doc/six/LICENSE
