@@ -4,7 +4,7 @@
 #
 Name     : six
 Version  : 1.12.0
-Release  : 52
+Release  : 53
 URL      : https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
