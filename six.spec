@@ -4,7 +4,7 @@
 #
 Name     : six
 Version  : 1.12.0
-Release  : 53
+Release  : 54
 URL      : https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/dd/bf/4138e7bfb757de47d1f4b6994648ec67a51efe58fa907c1e11e350cddfca/six-1.12.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
@@ -13,7 +13,6 @@ License  : MIT
 Requires: six-license = %{version}-%{release}
 Requires: six-python = %{version}-%{release}
 Requires: six-python3 = %{version}-%{release}
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : py
 BuildRequires : pytest
@@ -24,15 +23,6 @@ BuildRequires : setuptools-legacypython
 .. image:: https://img.shields.io/pypi/v/six.svg
 :target: https://pypi.org/project/six/
 :alt: six on PyPI
-
-%package legacypython
-Summary: legacypython components for the six package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the six package.
-
 
 %package license
 Summary: license components for the six package.
@@ -68,9 +58,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546095953
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554328549
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -78,22 +68,17 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test -v || :
 %install
-export SOURCE_DATE_EPOCH=1546095953
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/six
 cp LICENSE %{buildroot}/usr/share/package-licenses/six/LICENSE
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
