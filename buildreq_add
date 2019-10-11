@@ -2,5 +2,3 @@
 # picked up automatically. One name per line, no whitespace.
 py
 pytest
-setuptools-legacypython
-python-core
