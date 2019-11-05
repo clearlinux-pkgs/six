@@ -18,8 +18,10 @@ absl-py
 acme
 adapt-parser
 alembic
+amazon-efs-utils
 amqp
 apache-ant
+argon2_cffi
 astroid
 asv
 attrs
@@ -30,7 +32,6 @@ bcrypt
 bleach
 blockdiag
 bokeh
-caffe
 ceph
 certbot
 cheroot
@@ -47,9 +48,8 @@ dbus-glib
 debtcollector
 django-appconf
 django-pyscss
-dldt
-dldt-model-optimizer
 docker-compose
+docker-py
 dockerpty
 fasteners
 freezegun
@@ -63,11 +63,13 @@ glance_store
 google-api-python-client
 google-apitools
 google-pasta
+grpc
 grpcio
 gsutil
 gtk-doc
 h5py
 horizon
+horovod
 html5lib
 httpretty
 influxdb
@@ -77,6 +79,7 @@ ironic
 ironic-lib
 isodate
 josepy
+jsonlines
 jsonpath-rw
 jsonschema
 junit-xml
@@ -90,7 +93,9 @@ kombu
 libgnome-keyring
 libstoragemgmt
 locustio
+logilab-common
 mercurial
+mock
 munch
 mvn-arrow
 mvn-lucene-solr
@@ -203,6 +208,7 @@ tflearn
 thrift
 tinyrpc
 tooz
+tox
 traitlets
 trollius
 uamqp
@@ -216,3 +222,4 @@ websocket_client
 wsgi_intercept
 zake
 zope.i18nmessageid
+zope.testrunner
