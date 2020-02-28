@@ -4,7 +4,7 @@
 #
 Name     : six
 Version  : 1.14.0
-Release  : 62
+Release  : 63
 URL      : https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/21/9f/b251f7f8a76dec1d6651be194dfba8fb8d7781d10ab3987190de8391d08e/six-1.14.0.tar.gz
 Summary  : Python 2 and 3 compatibility utilities
@@ -19,8 +19,34 @@ BuildRequires : pytest
 
 %description
 .. image:: https://img.shields.io/pypi/v/six.svg
-:target: https://pypi.org/project/six/
-:alt: six on PyPI
+   :target: https://pypi.org/project/six/
+   :alt: six on PyPI
+
+.. image:: https://travis-ci.org/benjaminp/six.svg?branch=master
+   :target: https://travis-ci.org/benjaminp/six
+   :alt: six on TravisCI
+
+.. image:: https://readthedocs.org/projects/six/badge/?version=latest
+   :target: https://six.readthedocs.io/
+   :alt: six's documentation on Read the Docs
+
+.. image:: https://img.shields.io/badge/license-MIT-green.svg
+   :target: https://github.com/benjaminp/six/blob/master/LICENSE
+   :alt: MIT License badge
+
+Six is a Python 2 and 3 compatibility library.  It provides utility functions
+for smoothing over the differences between the Python versions with the goal of
+writing Python code that is compatible on both Python versions.  See the
+documentation for more information on what is provided.
+
+Six supports Python 2.7 and 3.3+.  It is contained in only one Python
+file, so it can be easily copied into your project. (The copyright and license
+notice must be retained.)
+
+Online documentation is at https://six.readthedocs.io/.
+
+Bugs can be reported to https://github.com/benjaminp/six.  The code can also
+be found there.
 
 %package license
 Summary: license components for the six package.
@@ -43,6 +69,7 @@ python components for the six package.
 Summary: python3 components for the six package.
 Group: Default
 Requires: python3-core
+Provides: pypi(six)
 
 %description python3
 python3 components for the six package.
@@ -57,7 +84,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580153984
+export SOURCE_DATE_EPOCH=1582921899
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
